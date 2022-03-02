@@ -1,0 +1,47 @@
+:root {
+  --grey: #303030;
+  --orange: #ed6c24;
+}
+
+
+body {
+  background-color: var(--grey);
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+.logo{
+  width: 80%;
+  max-width: 300px;
+}
+
+.header-line {
+  width: 50%;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  top: 7em;
+}
+
+@media  (min-width:350px) {
+  .header-line {
+    top: 8em;
+  }
+}
