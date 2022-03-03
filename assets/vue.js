@@ -1,5 +1,3 @@
-
-
 /* =================== DATAS ================== */
 const cars = [
   {
@@ -85,12 +83,15 @@ const Car = {
   template: '#carDetails',
   name : 'Car', 
   data() {
-    return {cars}
+    return {
+      cars,
+      id : this.$route.params.id,
+      carById: {}
+    }
   },
-  methods: {
-    searchCarById: function(cars, id) {
-      console.log('coucou');
-      const carById = cars.find((car) => {
+  computed: {
+    searchCarById(id) {
+      carById = this.cars.find((car) => {
         return car.id === id
       })
       return carById;
@@ -99,7 +100,7 @@ const Car = {
 }
 
 
-// router
+/* ================ ROUTER ================= */
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
@@ -108,8 +109,6 @@ const router = VueRouter.createRouter({
     {path: '/car/:id', component: Car, name: 'Car'}
   ]
 })
-
-
 
 const app = Vue.createApp({
   data () {

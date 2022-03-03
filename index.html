@@ -42,7 +42,7 @@
       <!-- cars list -->
       <ul class="cars-list">
         <li class="cars-list-element" v-for="car in filteredList">
-          <router-link to="/car/{{$route.params.id}}" class="car-title-link">
+          <router-link to="{name : 'Car', params: {id: car.id}}" class="car-title-link">
             <div class="car-title">{{car.title}}</div>
           </router-link>
           <img class="car-picture" :src="car.picture">
@@ -63,7 +63,8 @@
 
   <!-- ---------------CAR DETAILS---------------- -->
   <script type="text/x-template" id="carDetails">
-
+    id est {{id}}
+    {{carById}}
   </script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
   <script src="https://unpkg.com/vue@3"></script>
