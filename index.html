@@ -42,12 +42,14 @@
       <!-- cars list -->
       <ul class="cars-list">
         <li class="cars-list-element" v-for="car in filteredList">
-          <router-link to="{name : 'Car', params: {id: car.id}}" class="car-title-link">
+          <router-link :to="{name : 'Car', params: {id: car.id}}" class="car-title-link">
             <div class="car-title">{{car.title}}</div>
-          </router-link>
+            
           <img class="car-picture" :src="car.picture">
+        </router-link>
           <div class="car-mileage">{{car.mileage}}km</div>
           <div class="car-price">{{car.price}}&euro;</div>
+        
         </li>
       </ul> 
     </main>

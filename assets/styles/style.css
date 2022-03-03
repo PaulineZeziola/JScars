@@ -113,10 +113,11 @@ header {
 
 .car-title-link {
   text-decoration: none;
+  text-align: center;
 }
 
 .car-title-link:hover {
-  font-size: 1.5em;
+  font-size: 1.2em;
   transition: 0.5s;
 }
 .car-picture {
