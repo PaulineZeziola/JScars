@@ -85,18 +85,23 @@ const Car = {
   data() {
     return {
       cars,
+      logo,
       id : this.$route.params.id,
-      carById: {}
+      carById : {},
     }
   },
+
+  // property update after component creation
   computed: {
-    searchCarById(id) {
-      carById = this.cars.find((car) => {
-        return car.id === id
-      })
-      return carById;
+    carByIdComputed() {
+      return this.carById;
     }
-  }, 
+  },
+
+  // search car by id before render of component
+  created() {
+    return this.carById = this.cars.find((car) => car.id == this.id)
+  },
 }
 
 

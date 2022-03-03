@@ -63,8 +63,23 @@
 
   <!-- ---------------CAR DETAILS---------------- -->
   <script type="text/x-template" id="carDetails">
-    id est {{id}}
-    {{carById}}
+    <header>
+      <img class="logo" :src="logo" alt="logo JScars">
+      <div class="header-line"></div>
+    </header>
+    <div class="test">
+      {{carById.title}}
+
+    </div>
+    
+    <footer>
+      <div class="header-line-footer"></div>
+      <div class="footer-div">
+        <a class="footer-div-link" href="#">Nous contacter</a>
+        <a class="footer-div-link" href="#">Mentions légales</a>
+        <a class="footer-div-link" href="#">En savoir plus</a>
+      </div>
+    </footer>
   </script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
   <script src="https://unpkg.com/vue@3"></script>
