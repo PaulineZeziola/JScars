@@ -26,19 +26,29 @@
       <!-- advanced search -->
       <div class="advancedSearch">
         <input type="search" v-model="searchTitle" placeholder="rechercher une voiture">
-        <!-- <select v-model="searchBrand">
+        <select v-model="searchBrand" class="advancedSearch-brand">
           <option value=""> Marque </option>
           <option value="mercedes"> Mercedes </option>
           <option value="fiat"> Fiat </option>
           <option value="citroen"> Citroen </option>
           <option value="kia"> Kia </option>
           <option value="peugeot"> Peugeot </option>
-        </select> -->
+        </select>
+        <label for="priceMin">Prix Minimum</label>
+        <input class="inputNumber" type="number" v-model="searchPriceMin" placeholder="Prix Minimum" id="priceMin">
+        <label for="priceMax">Prix Maximum</label>
+        <input class="inputNumber" type="number" v-model="searchPriceMax" placeholder="Prix Maximum" id="priceMax">
+        <label for="KmMin">Kilométrage Minimum</label>
+        <input class="inputNumber" type="number" v-model="searchKmMin" placeholder="Kilométrage Minimum" id="KmMin">
+        <label for="KmMax">Kilométrage Maximum</label>
+        <input class="inputNumber" type="number" v-model="searchKmMax" placeholder="Kilométrage Maximum" id="KmMax">
+        <!-- Number of result -->
         <span v-if="searchTitle && filteredList.length >= 1">
           {{filteredList.length}} résultat<span v-if="filteredList.length >=2">s</span>
         </span>
         <span v-if="filteredList.length == 0" class="noResult"> Aucun résultat trouvé </span>
       </div>
+      <button v-on:click='initializeSearch' class="initialize-search">Réinitialiser la recherche</button>
       <!-- cars list -->
       <ul class="cars-list">
         <li class="cars-list-element" v-for="car in filteredList">

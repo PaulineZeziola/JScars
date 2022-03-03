@@ -59,13 +59,34 @@ header {
 }
 
 /* =================== CAR RESEARCH ============== */
+.advancedSearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .advancedSearch > input {
   border-radius: 5px;
   border: none;
-  padding: 1em;
-  
+  padding: 0.5em;
   margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+}
+select {
+  margin: 1em;
+}
+
+.inputNumber {
+  width: 100px;
+}
+
+.advancedSearch > label {
+  color: white;
 }
 
 .advancedSearch > span {
@@ -75,6 +96,20 @@ header {
   margin: 0.5em;
 }
 
+.initialize-search {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--orange);
+  color: white;
+  padding: 1em;
+}
+
+/* @media (min-width: 1000px) {
+  .advancedSearch {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+} */
 /* ===================== CARS LIST ================ */
 
 .cars-list {

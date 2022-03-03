@@ -67,16 +67,51 @@ const Home = {
   data() {
      return {
        cars,
+       carsToDisplay : [],
        logo,
        searchTitle : '',
+       searchBrand : '',
+       searchPriceMin : 0,
+       searchPriceMax : 50000,
+       searchKmMin : 0,
+       searchKmMax : 1000000,
+    }
+  },
+  methods: {
+    // function to initialize user's advanced search
+    initializeSearch () {
+      this.searchTitle = '';
+      this.searchBrand = '';
+      this.searchPriceMin = 0;
+      this.searchPriceMax = 50000;
+      this.searchKmMin = 0;
+      this.searchKmMax = 1000000;
     }
   }, 
+
   computed: {
     // function to filter cars in terms of user search
     filteredList() {
-      return this.cars.filter((car) => {
-        return car.title.toLowerCase().includes(this.searchTitle. toLowerCase());
+      carsToDisplayTitle = this.cars.filter((car) => {
+        return car.title.toLowerCase().includes(this.searchTitle.toLowerCase());
       })
+      carsToDisplayBrand = carsToDisplayTitle.filter((car) => {
+        return car.brand.toLowerCase().includes(this.searchBrand.toLowerCase());
+      })
+      carsToDisplayPriceMin = carsToDisplayBrand.filter((car) => {
+        return parseInt(car.price)>this.searchPriceMin;
+      })
+      carsToDisplayPriceMax = carsToDisplayPriceMin.filter((car) => {
+        return parseInt(car.price)<this.searchPriceMax;
+      })
+      carsToDisplayKmMin = carsToDisplayPriceMax.filter((car) => {
+        return parseInt(car.mileage)>this.searchKmMin;
+      })
+      carsToDisplayKmMax = carsToDisplayKmMin.filter((car) => {
+        return parseInt(car.mileage)<this.searchKmMax;
+      })
+     
+      return this.carsToDisplay = carsToDisplayKmMax
     },
   }
 }
