@@ -123,12 +123,74 @@ header {
   width: 80%;
   padding: 1em 0 1em 0;
 }
-/* =====================CAR DETAILS==================== */
 
-.test {
+.car-picture:hover {
+  width: 90%;
+  transition: 0.5s;
+}
+/* =====================CAR DETAILS==================== */
+.button-home {
+  background-color: var(--orange);
+  padding: 1em;
+  margin-bottom: 1em;
   color: white;
-  font-size: 1.5em;
-  text-align: center;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.carDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 0.5em 0.5em 2em 0.5em;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 800px;
+  padding: 1em;
+}
+
+.carDetails-title {
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+.carDetails-picture {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.carDetails-picture:hover {
+  width: 120%;
+  transition: 0.5s;
+}
+
+.carDetails-details {
+  margin: 1em;
+  border: 1px solid var(--grey);
+  padding: 1em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.carDetails-description {
+  text-align: justify;
+}
+
+@media (min-width: 780px) {
+  .carDetails-details {
+    flex-direction: row;
+  }
+  .carDetails-details > div:not(:last-child) {
+    margin-right: 2em;
+  }
 }
 /* =========================FOOTER===================== */
 footer {

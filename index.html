@@ -67,11 +67,19 @@
       <img class="logo" :src="logo" alt="logo JScars">
       <div class="header-line"></div>
     </header>
-    <div class="test">
-      {{carById.title}}
-
+  <main>
+    <router-link to="/" class="button-home">Retour à l'accueil</router-link>
+    <div class="carDetails">
+      <h1 class="carDetails-title">{{carById.title}}</h1>
+      <img class="carDetails-picture" :src="carById.picture">
+      <div class="carDetails-details">
+        <div class="carDetails-details_brand">Marque : {{carById.brand}}</div>
+        <div class="carDetails-details_mileage">Kilométrage : {{carById.mileage}}km</div>
+        <div class="carDetails-details_price">Prix : {{carById.price}}&euro;</div>
+      </div>
+      <div class="carDetails-description">{{carById.description}}</div>
     </div>
-    
+  </main>
     <footer>
       <div class="header-line-footer"></div>
       <div class="footer-div">

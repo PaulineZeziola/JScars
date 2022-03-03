@@ -59,6 +59,8 @@ const cars = [
 const logo = './assets/images/JScars.png';
 
 /* =================== COMPONENTS ============= */
+
+/* HOME WITH CARS LIST */
 const Home = {
   template: '#home',
   name : 'Home',
@@ -79,6 +81,7 @@ const Home = {
   }
 }
 
+/* CAR DETAILS */
 const Car = {
   template: '#carDetails',
   name : 'Car', 
