@@ -56,7 +56,7 @@ const cars = [
   }
 ]
 
-const logo = './assets/images/JScars.png';
+
 
 /* =================== COMPONENTS ============= */
 
@@ -68,7 +68,6 @@ const Home = {
      return {
        cars,
        carsToDisplay : [],
-       logo,
        searchTitle : '',
        searchBrand : '',
        searchPriceMin : 0,
@@ -123,7 +122,6 @@ const Car = {
   data() {
     return {
       cars,
-      logo,
       id : this.$route.params.id,
       carById : {},
     }
@@ -153,6 +151,12 @@ const router = VueRouter.createRouter({
   ]
 })
 
-const app = Vue.createApp({});
+const app = Vue.createApp({
+  data () {
+    return {
+      logo : './assets/images/JScars.png',
+    }
+  }
+});
 
 app.use(router).mount('#app');
