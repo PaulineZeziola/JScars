@@ -153,12 +153,6 @@ const router = VueRouter.createRouter({
   ]
 })
 
-const app = Vue.createApp({
-  data () {
-    return {
-      logo : './assets/images/JScars.png',
-    }
-  }
-});
+const app = Vue.createApp({});
 
 app.use(router).mount('#app');
