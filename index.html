@@ -11,17 +11,23 @@
   <title>JScars</title>
 </head>
 <body>
-  
   <div id="app">
-    <router-view></router-view>  
-  </div>
-
-  <!-- --------------HOME-------------------- -->
-  <script type="text/x-template" id="home">
     <header>
       <img class="logo" :src="logo" alt="logo JScars">
       <div class="header-line"></div>
     </header>
+    <router-view></router-view>
+    <footer>
+      <div class="header-line-footer"></div>
+      <div class="footer-div">
+        <a class="footer-div-link" href="#">Nous contacter</a>
+        <a class="footer-div-link" href="#">Mentions légales</a>
+        <a class="footer-div-link" href="#">En savoir plus</a>
+      </div>
+    </footer>  
+  </div>
+  <!-- --------------HOME-------------------- -->
+  <script type="text/x-template" id="home">
     <main>
       <!-- advanced search -->
       <div class="advancedSearch">
@@ -54,31 +60,16 @@
         <li class="cars-list-element" v-for="car in filteredList">
           <router-link :to="{name : 'Car', params: {id: car.id}}" class="car-title-link">
             <div class="car-title">{{car.title}}</div>
-            
-          <img class="car-picture" :src="car.picture">
-        </router-link>
+            <img class="car-picture" :src="car.picture">
+          </router-link>
           <div class="car-mileage">{{car.mileage}}km</div>
           <div class="car-price">{{car.price}}&euro;</div>
-        
         </li>
       </ul> 
     </main>
-    <footer>
-      <div class="header-line-footer"></div>
-      <div class="footer-div">
-        <a class="footer-div-link" href="#">Nous contacter</a>
-        <a class="footer-div-link" href="#">Mentions légales</a>
-        <a class="footer-div-link" href="#">En savoir plus</a>
-      </div>
-    </footer>
   </script>
-
   <!-- ---------------CAR DETAILS---------------- -->
   <script type="text/x-template" id="carDetails">
-    <header>
-      <img class="logo" :src="logo" alt="logo JScars">
-      <div class="header-line"></div>
-    </header>
   <main>
     <router-link to="/" class="button-home">Retour à l'accueil</router-link>
     <div class="carDetails">
@@ -92,19 +83,10 @@
       <div class="carDetails-description">{{carById.description}}</div>
     </div>
   </main>
-    <footer>
-      <div class="header-line-footer"></div>
-      <div class="footer-div">
-        <a class="footer-div-link" href="#">Nous contacter</a>
-        <a class="footer-div-link" href="#">Mentions légales</a>
-        <a class="footer-div-link" href="#">En savoir plus</a>
-      </div>
-    </footer>
   </script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
   <script src="https://unpkg.com/vue@3"></script>
   <script src="https://unpkg.com/vue-router@4"></script>
   <script src="./assets/vue.js"></script>
-  <script src="./assets/app.js"></script>
 </body>
 </html>
